@@ -6,7 +6,7 @@
 
 高德地图天气预报：早晚定时群播报与手动查询天气。
 
-- **插件目录**：`whitefox_weather-forecast`
+- **插件目录**：`wenaixi_mai_weather_forecast_fuqing`
 - **生效版本**：`v2.0.1`
 - **开源许可证**：`MIT`
 
