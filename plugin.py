@@ -8,7 +8,7 @@ import datetime
 import re
 from typing import Any, ClassVar
 
-from maibot_sdk import Command, Field, MaiBotPlugin, PluginConfigBase, Tool
+from maibot_sdk import API, Command, Field, MaiBotPlugin, PluginConfigBase, Tool
 from maibot_sdk.types import ToolParameterInfo, ToolParamType
 
 from .weather_service import WeatherService
