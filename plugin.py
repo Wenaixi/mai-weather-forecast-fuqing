@@ -440,6 +440,24 @@ class WeatherForecastPlugin(MaiBotPlugin):
             ToolParameterInfo(name="days", param_type=ToolParamType.INTEGER, description="返回未来几天预报(1-4)", required=False),
         ],
     )
+    
+    @API("plugin.weather.get_current_weather", description="获取指定城市当前天气情况", version="1", public=True)
+    async def api_get_current_weather(self, city: str = "福清") -> dict[str, Any]:
+        """为其他插件（如日记、日程）提供指定城市的实时高德天气数据。"""
+        target_city = (city or "").strip() or "福清"
+        service = WeatherService(self.config.weather.amap_key)
+        try:
+            city_info = await service.resolve_city(target_city)
+            if not city_info or not city_info.get("adcode"):
+                return {}
+            live = await service.get_live(city_info["adcode"])
+            return live or {}
+        except Exception as e:
+            self.ctx.logger.warning(f"获取城市天气失败 ({target_city}): {e}")
+            return {}
+        finally:
+            await service.aclose()
+
     async def handle_weather_tool(self, city: str = "", days: int = 3, **kwargs: Any):
         city = city.strip()
         if not city:
