@@ -1,34 +1,42 @@
-# MaiBot 高德天气预报与定时播报插件 (weather-forecast)
+# 天气预报插件 (weather-forecast)
 
-基于高德开放平台 Web 服务 API 构建的高精度天气预报插件。支持全天候实时天气查询、未来多日天气走势预测，以及多群聊、多时段自定义定时早晚播报。
+> 本插件由 [Wenaixi](https://github.com/Wenaixi) 维护，是专为生产环境深度调优的高可用分支。
 
-## 核心功能
+## 简介与定位
 
-- 实时与多日天气：支持精确到区县级的实时天气、气温、风向风力及空气质量查询。
-- 极速命令交互：支持 `/天气 [地点]` 或 `/weather [地点]` 快速触发。
-- 双时段定时播报：已深度优化原生单点调度逻辑，完美支持如 `06:00,22:20` 的早晚双时段独立广播。
-- 大模型自然语言融合：支持大模型调用天气工具，以拟人化口吻向群友送出贴心保暖/防雨提醒。
+高德地图天气预报：早晚定时群播报与手动查询天气。
 
-## 配置指南
+- **插件目录**：`whitefox_weather-forecast`
+- **生效版本**：`v2.0.1`
+- **开源许可证**：`MIT`
 
-```toml
-[plugin]
-enabled = true
-amap_key = "YOUR_AMAP_KEY_HERE"  # 请替换为高德开放平台 Web 服务 API Key
+---
 
-[broadcast]
-broadcast_enabled = true
-broadcast_time = "06:00,22:20"    # 支持逗号分隔的双时段定时播报
-target_groups = [
-    "935350234 福清",
-    "974533432 福清"
-]
+## 核心特性与本地深度调优
 
-[tool]
-enabled = true
-default_days = 3
-```
+- 导出通用天气查询 API (plugin.weather.get_current_weather)，修复 API 导入，为麦迹日记提供实时的福清地理天气与温度
 
-## 开源协议
+---
 
-本项目采用 MIT 许可证开源，详情请参阅 [LICENSE](LICENSE)。
+## 指令与工具速查
+
+### 常用指令 (Command)
+- `/天气 <城市> - 手动查询指定地点天气预报`
+
+### 大模型工具 (Tool)
+- `@Tool("weather_query") - 查询城市气象预报工具`
+
+---
+
+## 快速配置
+
+配置文件统一定位于插件根目录下的 `config.toml`。修改后重启或通过 WebUI 热重载即可生效。
+
+---
+
+## 上游项目与开源溯源
+
+- **原作者 / 组织**：`whitefox`
+- **官方原版开源仓库**：[https://github.com/whitefox/weather-forecast](https://github.com/whitefox/weather-forecast)
+- **开源协议**：`MIT`
+- **声明**：本项目遵循开源协议，特此致敬原作者的杰出贡献。本分支针对生产环境的高并发网络、个性化社交和抗风控需求进行了深度稳定性修复与定制化演进。
