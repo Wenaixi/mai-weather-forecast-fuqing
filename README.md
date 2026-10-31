@@ -1,5 +1,11 @@
 # 天气预报插件 (weather-forecast)
 
+[![Release](https://img.shields.io/github/v/release/Wenaixi/mai-weather-forecast-fuqing?style=flat-square&color=blue&label=release)](https://github.com/Wenaixi/mai-weather-forecast-fuqing/releases)
+[![CI](https://img.shields.io/github/actions/workflow/status/Wenaixi/mai-weather-forecast-fuqing/ci.yml?branch=main&style=flat-square&label=CI)](https://github.com/Wenaixi/mai-weather-forecast-fuqing/actions)
+[![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
+[![Python](https://img.shields.io/badge/python-3.12%20%7C%203.13-blue?style=flat-square)](https://www.python.org/)
+[![MaiBot](https://img.shields.io/badge/MaiBot-1.2%2B-orange?style=flat-square)](https://docs.mai-mai.org)
+
 > 本插件由 [Wenaixi](https://github.com/Wenaixi) 维护，是专为生产环境深度调优的高可用分支。
 
 ## 简介与定位
@@ -7,7 +13,6 @@
 高德地图天气预报：早晚定时群播报与手动查询天气。
 
 - **插件目录**：`wenaixi_mai_weather_forecast_fuqing`
-- **生效版本**：`v2.0.1`
 - **开源许可证**：`MIT`
 
 ---
