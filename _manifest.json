@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "version": "0.1.0",
+  "version": "2.0.1",
   "name": "麦麦高德天气预报与福清气象",
   "description": "定时获取指定地区天气并推送到群聊，支持手动查询指定地点天气",
   "author": {
